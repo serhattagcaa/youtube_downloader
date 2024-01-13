@@ -13,7 +13,7 @@ const Navbar = () => {
   // These are the links for the navigation menu
   const links = [
     { href: "/youtubeMpHd4K", text: "Youtube HD 4K" },
-    { href: "/youtubeMp3", text: "Youtube to MP4" },
+    { href: "/youtubeMp4", text: "Youtube to MP4" },
     { href: "/youtubeMp3", text: "Youtube to MP3" }
   ];
 
