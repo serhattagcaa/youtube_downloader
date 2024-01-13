@@ -1,16 +1,12 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import Navbar from './components/Navbar.jsx'
 
 export function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-       <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <div className='bg-[#f9f9f9] flex justify-center '>
+   <Navbar/>
+   </div>
   )
 }
+
+export default App;
