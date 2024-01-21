@@ -56,7 +56,7 @@ const YoutubeMp3 = () => {
               alt="Tip: How to quickly download YouTube video MP3"
             />
           </div>
-          <div className="lg:w-1/2 grid gap-4 grid-cols-2">
+          <div className="lg:w-1/2 grid gap-4 md:grid-cols-2 grid-cols-1">
             <span className={tailwindClasses}>Box 1</span>
             <span className={tailwindClasses}>Box 2</span>
             <span className={tailwindClasses}>Box 3</span>
