@@ -1,12 +1,13 @@
-import Navbar from './components/Navbar.jsx'
+import Navbar from './components/Navbar.jsx';
+import YoutubeMp3 from './components/youtubeMp3.jsx';
 
-export function App() {
-
+function App() {
   return (
-    <div className='bg-[#f9f9f9] flex justify-center '>
-   <Navbar/>
-   </div>
-  )
+    <body className='bg-[#f9f9f9] flex flex-col items-center justify-center '>
+      <Navbar />
+      <YoutubeMp3/>
+    </body>
+  );
 }
 
 export default App;

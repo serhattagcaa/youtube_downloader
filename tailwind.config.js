@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        'searchthree': '3px',
+      },
       fontFamily: {
         navText: ['Roboto'],
       },

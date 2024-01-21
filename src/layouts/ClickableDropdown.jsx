@@ -24,7 +24,7 @@ const ClickableDropdown = () => {
          onMouseOver={handleMouseOver}
          onMouseOut={handleMouseOut}
          onChange={(e) => setSelectedLanguage(e.target.value)}
-         className="bg-gray-100 appearance-none p-2 focus:outline-none border-none hover:bg-gray-200 hover:text-rose-700">
+         className="bg-[#f9f9f9] appearance-none lg:w-[70px] lg:h-[70px] text-sm focus:outline-none border-none hover:bg-gray-200 hover:text-rose-700">
           
          {/* Generate option elements for each language */}
          {languages.map((language) => (
@@ -35,7 +35,7 @@ const ClickableDropdown = () => {
       
       {/* Display the arrow icon with dynamic color */}
       <TiArrowSortedDown style={{ color: arrowColor }} 
-      className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"/>
+      className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-gray-500"/>
     </div>
   );
 };
