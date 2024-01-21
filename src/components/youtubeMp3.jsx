@@ -5,12 +5,12 @@ const tailwindClasses = "px-auto  bg-gray-300 border-2 border-brown-900";
 const YoutubeMp3 = () => {
   return (
     <>
-      <article className="lg:w-[890px] w-full flex flex-col shadow items-center justify-center bg-[#ffffff] px-4">
+      <section className="lg:w-[890px] w-full flex flex-col shadow items-center justify-center bg-[#ffffff] px-4">
         {/* Box /2 */}
         <div className="flex flex-col max-w-[600px] w-full items-center p-2">
           <h1 className="flex lg:text-4xl font-roboto font-light text-2xl mt-2">
             Convert Youtube to MP3
-          </h1>
+          </h1> 
           <form className="w-full flex py-8 px-8 items-center">
             <input
               type="text"
@@ -63,7 +63,7 @@ const YoutubeMp3 = () => {
             <span className={tailwindClasses}>Box 4</span>
           </div>
         </div>
-      </article>
+      </section>
     </>
   );
 };
