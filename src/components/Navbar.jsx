@@ -26,7 +26,7 @@ const Navbar = () => {
           className="flex items-center justify-between space-x-2 hover:text-rose-700 mx-4 lg:mx-0"
         >
           <img src="logo.png" alt="Website Logo" className="size-12" />
-          <span className="font-roboto font-bold text-2xl">Y2Meta.app</span>
+          <span className="font-roboto font-bold v  text-2xl">Y2Meta.app</span>
         </a>
 
         {/* This is the menu icon */}
