@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Downloader 3D</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2962ff;
+        --secondary: #0039cb;
+        --background: #1a1a1a;
+        --surface: #2d2d2d;
+        --text: #ffffff;
+        --shadow: rgba(0, 0, 0, 0.3);
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--background);
+        color: var(--text);
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1000px;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 900px;
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px var(--shadow);
+        transform-style: preserve-3d;
+        transform: rotateX(5deg);
+        transition: transform 0.3s ease;
+      }
+
+      .container:hover {
+        transform: rotateX(0deg);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: var(--primary);
+        text-shadow: 0 0 10px rgba(41, 98, 255, 0.3);
+      }
+
+      .search-container {
+        position: relative;
+        margin-bottom: 2rem;
+        transform-style: preserve-3d;
+        transform: translateZ(20px);
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: 15px;
+        background: var(--background);
+        color: var(--text);
+        font-size: 1rem;
+        box-shadow: 0 5px 15px var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .search-input:focus {
+        outline: none;
+        box-shadow: 0 8px 20px var(--shadow), 0 0 0 2px var(--primary);
+        transform: translateY(-2px);
+      }
+
+      button {
+        background: var(--primary);
+        color: var(--text);
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(41, 98, 255, 0.3);
+        transform-style: preserve-3d;
+      }
+
+      button:hover {
+        background: var(--secondary);
+        transform: translateY(-2px) translateZ(10px);
+        box-shadow: 0 8px 20px rgba(41, 98, 255, 0.4);
+      }
+
+      .video-result {
+        background: var(--surface);
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+
+      .video-result:hover {
+        transform: scale(1.02) translateZ(10px);
+        box-shadow: 0 8px 20px var(--shadow);
+      }
+
+      .video-thumbnail {
+        width: 160px;
+        border-radius: 10px;
+        margin-right: 1.5rem;
+      }
+
+      .format-item {
+        background: var(--background);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 15px;
+        transform-style: preserve-3d;
+        transition: all 0.3s ease;
+      }
+
+      .format-item:hover {
+        transform: translateZ(10px);
+        box-shadow: 0 8px 20px var(--shadow);
+      }
+
+      .progress-container {
+        background: var(--surface);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin-top: 2rem;
+        transform-style: preserve-3d;
+      }
+
+      .progress-bar {
+        height: 10px;
+        background: var(--background);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .progress {
+        height: 100%;
+        background: var(--primary);
+        border-radius: 5px;
+        transition: width 0.3s ease;
+      }
+
+      .error {
+        color: #ff4444;
+        padding: 1rem;
+        border-radius: 10px;
+        background: rgba(255, 68, 68, 0.1);
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+          padding: 1rem;
+          transform: none;
+        }
+
+        .video-result {
+          flex-direction: column;
+        }
+
+        .video-thumbnail {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>YouTube Downloader</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search videos or paste YouTube URL"
+        />
+        <button onclick="handleSearch()">Search</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+      <div id="formatList" class="format-list"></div>
+      <div id="error" class="error"></div>
+      <div id="progressContainer" class="progress-container" style="display: none;">
+        <div class="progress-bar">
+          <div id="progressBar" class="progress"></div>
+        </div>
+        <div id="progressText" class="progress-text">Download starting...</div>
+        <button id="cancelButton" onclick="cancelDownload()">Cancel</button>
+      </div>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>
